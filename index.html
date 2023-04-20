@@ -19,8 +19,25 @@
 
 <body>
 
-    <div class="container p-3">
-        <h1 class="text-center">ToDo List</h1>
+    <div id="app">
+        <div class="container p-3 bg-secondary">
+            <h1 class="text-center mb-4">ToDo List</h1>
+
+            <ul class="d-flex flex-column align-items-center justify-content-center  mb-2">
+                <li v-for="todo in todos">
+                    {{todo}}
+                </li>
+            </ul>
+
+
+            <div class="d-flex align-items-center justify-content-center">
+                <input v-model="newTodo" type="text" placeholder="Aggiungi Todo" class="me-3" @keyup.enter="addTodo()">
+                <button class="btn btn-primary" @click="addTodo()">aggiungi</button>
+            </div>
+
+
+        </div>
+
     </div>
 
 
